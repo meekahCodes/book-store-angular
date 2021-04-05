@@ -1,0 +1,39 @@
+
+    
+<div class="row justify-content-center">
+    <h1 class="text-center">Books List</h1>
+</div>    
+
+<h4>Filter By</h4>
+<div class="row mb-4">
+
+
+    <div class="col-md-8">
+        <input (keyup)="onKeyUpSearch($event)" class="form-control" placeholder="Search Here" type="text" >
+    </div>
+    <div class="col-md-4">
+        <select  (change)="onChangeAuthor($event)" class="form-control" name="author" id="author">
+            <option value="">All</option>
+            <option *ngFor="let author of authors; index as i;" value="{{author.id}}">{{author.name}}</option>
+        </select>
+    </div>
+    
+</div>
+
+<div class="row">
+
+    
+    <div *ngFor="let book of books; index as i;" class="col-md-4 mb-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">{{book.title}}</h5>
+                <p class="card-text">{{book.description}}</p>
+                <p class="card-text">Created By: <strong>{{book.created_by}}</strong></p>
+            </div>
+        </div>
+    </div>
+
+
+    
+</div>
+

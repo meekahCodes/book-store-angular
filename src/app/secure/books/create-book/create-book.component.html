@@ -1,0 +1,19 @@
+<h4>Create Book</h4>
+
+<form [formGroup]="form" class="form mt-3 mb-3" (submit)="submit()">
+
+
+    <div class="form-group">
+        <input formControlName="title" type="text" name="title" class="form-control" id="title" placeholder="Name">
+        <!-- <div class="badge alert alert-danger mt-2">
+            Name Required
+        </div> -->
+    </div> 
+
+    <div class="form-group">
+        <textarea formControlName="description"  name="description" class="form-control" id="description" placeholder="Description"> </textarea>
+    </div>
+
+    <button class="btn btn-primary btn-block" [disabled]="form.invalid">Create</button>
+
+</form>
